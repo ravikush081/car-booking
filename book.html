@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-box">
+<h1>Book {{ car.name }}</h1>
+<form method="post">
+<label>Name<input name="customer_name" required></label>
+<label>Mobile Number<input name="phone" type="tel" required></label>
+<label>Pickup Location<input name="pickup" required></label>
+<label>Drop Location<input name="drop_location" required></label>
+<label>Start Date<input name="start_date" type="date" required></label>
+<label>End Date<input name="end_date" type="date" required></label>
+<p class="price">₹{{ "%.0f"|format(car.price_per_day) }} / day</p>
+<button class="btn" type="submit">Submit Booking</button>
+</form>
+</div>
+{% endblock %}

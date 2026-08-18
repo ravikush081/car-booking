@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title or "My Car Booking" }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav>
+  <a class="brand" href="{{ url_for('index') }}">🚗 My Car Booking</a>
+  <div>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('book') }}">Book Now</a>
+    <a href="{{ url_for('admin_login') }}">Owner Login</a>
+  </div>
+</nav>
+{% with messages = get_flashed_messages() %}
+  {% for message in messages %}<div class="flash">{{ message }}</div>{% endfor %}
+{% endwith %}
+<main>{% block content %}{% endblock %}</main>
+<footer>© 2026 My Car Booking</footer>
+</body>
+</html>

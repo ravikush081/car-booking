@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="success">
+<h1>✅ Booking Request Submitted</h1>
+<p>Thank you, {{ booking.customer_name }}.</p>
+<p><b>Booking ID:</b> #{{ booking.id }}</p>
+<p>{{ booking.start_date }} to {{ booking.end_date }} — {{ days }} day(s)</p>
+<p><b>Total: ₹{{ "%.0f"|format(booking.total_amount) }}</b></p>
+<p>Your booking is currently <b>{{ booking.status }}</b>. The owner will contact you.</p>
+<a class="btn" href="{{ url_for('index') }}">Back to Home</a>
+</div>
+{% endblock %}

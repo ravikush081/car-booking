@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-box small">
+<h1>Owner Login</h1>
+<form method="post">
+<label>Username<input name="username" required></label>
+<label>Password<input name="password" type="password" required></label>
+<button class="btn">Login</button>
+</form>
+<p class="muted">Demo login: admin / admin123</p>
+</div>
+{% endblock %}

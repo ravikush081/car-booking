@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dash-head"><h1>Owner Dashboard</h1><a href="{{ url_for('admin_logout') }}">Logout</a></div>
+
+<div class="form-box">
+<h2>Car Details</h2>
+<form method="post" action="{{ url_for('update_car') }}">
+<label>Car Name<input name="name" value="{{ car.name }}" required></label>
+<label>Model Year<input name="model_year" value="{{ car.model_year }}"></label>
+<label>Price Per Day<input name="price_per_day" type="number" min="0" value="{{ car.price_per_day }}" required></label>
+<label>Seats<input name="seats" type="number" min="1" value="{{ car.seats }}"></label>
+<label>Fuel<input name="fuel" value="{{ car.fuel }}"></label>
+<label>Image URL<input name="image" value="{{ car.image }}"></label>
+<label>Description<textarea name="description">{{ car.description }}</textarea></label>
+<button class="btn">Save Car</button>
+</form>
+</div>
+
+<h2>Bookings ({{ bookings|length }})</h2>
+<div class="table-wrap">
+<table>
+<tr><th>ID</th><th>Customer</th><th>Dates</th><th>Pickup</th><th>Drop</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+{% for b in bookings %}
+<tr>
+<td>#{{ b.id }}</td><td>{{ b.customer_name }}<br>{{ b.phone }}</td>
+<td>{{ b.start_date }}<br>{{ b.end_date }}</td>
+<td>{{ b.pickup }}</td><td>{{ b.drop_location }}</td>
+<td>₹{{ "%.0f"|format(b.total_amount) }}</td><td>{{ b.status }}</td>
+<td>
+<a href="{{ url_for('booking_status', booking_id=b.id, status='Confirmed') }}">Confirm</a> |
+<a href="{{ url_for('booking_status', booking_id=b.id, status='Rejected') }}">Reject</a>
+</td>
+</tr>
+{% else %}<tr><td colspan="8">No bookings yet.</td></tr>{% endfor %}
+</table>
+</div>
+{% endblock %}

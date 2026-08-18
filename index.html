@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="tag">ONLINE CAR BOOKING</p>
+    <h1>{{ car.name if car else "Your Car" }}</h1>
+    <p>{{ car.description if car else "Book a car online." }}</p>
+    <a class="btn" href="{{ url_for('book') }}">Book This Car</a>
+  </div>
+  {% if car and car.image %}<img src="{{ car.image }}" alt="Car">{% endif %}
+</section>
+<section class="card-grid">
+  <div class="card"><b>₹{{ "%.0f"|format(car.price_per_day) if car else 0 }}</b><span>Per Day</span></div>
+  <div class="card"><b>{{ car.seats if car else 5 }}</b><span>Seats</span></div>
+  <div class="card"><b>{{ car.fuel if car else "Petrol" }}</b><span>Fuel</span></div>
+  <div class="card"><b>{{ car.model_year if car else "-" }}</b><span>Model Year</span></div>
+</section>
+{% endblock %}

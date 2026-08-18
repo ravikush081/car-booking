@@ -1,1 +1,543 @@
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}nav{display:flex;justify-content:space-between;align-items:center;padding:16px 6%;background:#111827;color:white}nav a{color:white;text-decoration:none;margin-left:18px}.brand{font-weight:700;margin-left:0}.flash{margin:15px auto;padding:12px 18px;max-width:1100px;background:#fff3cd;border-radius:8px}main{max-width:1100px;margin:35px auto;padding:0 20px}.hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:white;border-radius:20px;padding:35px;box-shadow:0 8px 30px #00000010}.hero img{width:100%;height:300px;object-fit:cover;border-radius:15px}.hero h1{font-size:45px;margin:10px 0}.tag{font-weight:bold;letter-spacing:2px}.btn{display:inline-block;background:#2563eb;color:white;padding:12px 20px;border:0;border-radius:8px;text-decoration:none;cursor:pointer}.card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px}.card{background:white;padding:25px;border-radius:12px;text-align:center}.card b,.card span{display:block}.card b{font-size:24px}.card span{margin-top:8px;color:#667085}.form-box{background:white;max-width:700px;margin:auto;padding:30px;border-radius:15px;box-shadow:0 5px 20px #0000000d}.small{max-width:450px}label{display:block;margin:15px 0;font-weight:bold}input,textarea{display:block;width:100%;padding:12px;margin-top:7px;border:1px solid #ccd3df;border-radius:8px;font:inherit}textarea{min-height:100px}.price{font-size:22px;font-weight:bold}.success{background:white;padding:40px;text-align:center;border-radius:15px;max-width:650px;margin:auto}.dash-head{display:flex;justify-content:space-between;align-items:center}.table-wrap{overflow-x:auto;background:white;border-radius:12px}table{width:100%;border-collapse:collapse;min-width:900px}th,td{padding:12px;border-bottom:1px solid #eee;text-align:left}th{background:#f0f3f8}.muted{color:#667085}footer{text-align:center;padding:30px;color:#667085}@media(max-width:700px){nav{display:block}nav div{margin-top:12px}.hero{grid-template-columns:1fr}.hero h1{font-size:34px}.card-grid{grid-template-columns:1fr 1fr}}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    line-height: 1.5;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 6%;
+    background: #111827;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.brand {
+    font-weight: 700;
+    margin-left: 0;
+    font-size: 20px;
+}
+
+/* =========================
+   FLASH MESSAGE
+========================= */
+
+.flash {
+    margin: 15px auto;
+    padding: 12px 18px;
+    max-width: 1100px;
+    background: #fff3cd;
+    color: #664d03;
+    border-radius: 8px;
+    border: 1px solid #ffe69c;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 8px 30px #00000010;
+}
+
+.hero img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+.tag {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.card b,
+.card span {
+    display: block;
+}
+
+.card b {
+    font-size: 24px;
+}
+
+.card span {
+    margin-top: 8px;
+    color: #667085;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-box {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0000000d;
+}
+
+.small {
+    max-width: 450px;
+}
+
+label {
+    display: block;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccd3df;
+    border-radius: 8px;
+    font: inherit;
+    background: white;
+    color: #172033;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px #2563eb20;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+.success {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    max-width: 650px;
+    margin: auto;
+    box-shadow: 0 5px 20px #0000000d;
+}
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
+
+.dash-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dash-head h1 {
+    margin: 0;
+}
+
+/* =========================
+   ADMIN CAR FORM
+========================= */
+
+.car-form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0000000d;
+    margin-bottom: 30px;
+}
+
+.car-form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.car-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.car-form label {
+    margin: 10px 0;
+}
+
+.car-form input,
+.car-form textarea {
+    width: 100%;
+}
+
+.save-btn {
+    margin-top: 10px;
+}
+
+/* =========================
+   BOOKING TABLE
+========================= */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #0000000d;
+}
+
+table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #f3f4f6;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+td {
+    background: white;
+}
+
+tr:hover td {
+    background: #f9fafb;
+}
+
+/* =========================
+   BOOKING ACTION BUTTONS
+========================= */
+
+.action {
+    white-space: nowrap;
+}
+
+.action a {
+    display: inline-block;
+    padding: 7px 10px;
+    margin: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.confirm {
+    background: #16a34a;
+    color: white;
+}
+
+.confirm:hover {
+    background: #15803d;
+}
+
+.reject {
+    background: #dc2626;
+    color: white;
+}
+
+.reject:hover {
+    background: #b91c1c;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-confirmed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.muted {
+    color: #667085;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #667085;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    /* Navbar */
+
+    nav {
+        display: block;
+        padding: 15px;
+    }
+
+    .brand {
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    nav div {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 12px;
+    }
+
+    /* Main */
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .hero img {
+        height: 230px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    /* Cards */
+
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 18px 10px;
+    }
+
+    .card b {
+        font-size: 20px;
+    }
+
+    /* Forms */
+
+    .form-box {
+        padding: 20px;
+    }
+
+    /* Dashboard */
+
+    .dash-head {
+        display: block;
+    }
+
+    .dash-head h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .car-form {
+        padding: 15px;
+    }
+
+    .car-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .car-form input,
+    .car-form textarea {
+        font-size: 16px;
+    }
+
+    /* Table */
+
+    .table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 900px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Success */
+
+    .success {
+        padding: 25px 18px;
+    }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin-right: 8px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
